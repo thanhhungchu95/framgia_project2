@@ -1,0 +1,3 @@
+kaminari:
+  default_per_page: 8
+  max_per_page: 12

@@ -1,0 +1,3 @@
+# Disable checking for descriptive comment
+IrresponsibleModule:
+  enabled: false

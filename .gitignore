@@ -26,4 +26,5 @@
 
 # Ignore framgia-ci config report
 .framgia-ci-reports/
-.framgia-ci-result.temp.yml
+
+# Ignore test

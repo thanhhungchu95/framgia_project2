@@ -89,6 +89,12 @@ GEM
     deep_merge (1.1.1)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
+    devise (4.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.2)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.3)
     docile (1.1.5)
     equalizer (0.0.11)
@@ -170,6 +176,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    orm_adapter (0.5.0)
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.20.0)
@@ -225,6 +232,9 @@ GEM
       rainbow (~> 2.0)
     ref (2.0.0)
     require_all (1.4.0)
+    responders (2.4.0)
+      actionpack (>= 4.2.0, < 5.3)
+      railties (>= 4.2.0, < 5.3)
     rspec (3.6.0)
       rspec-core (~> 3.6.0)
       rspec-expectations (~> 3.6.0)
@@ -316,6 +326,8 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
+    warden (1.2.7)
+      rack (>= 1.0)
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -330,7 +342,6 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  bcrypt (~> 3.1.7)
   better_errors
   bootstrap-kaminari-views
   bootstrap-sass
@@ -340,6 +351,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   config
   database_cleaner
+  devise
   eslint-rails
   factory_girl_rails
   guard-rspec

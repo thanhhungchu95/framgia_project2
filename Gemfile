@@ -1,10 +1,10 @@
 source "https://rubygems.org"
 
-gem "bcrypt", "~> 3.1.7"
 gem "bootstrap-kaminari-views"
 gem "bootstrap-sass"
 gem "coffee-rails", "~> 4.2"
 gem "config"
+gem "devise"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "kaminari"

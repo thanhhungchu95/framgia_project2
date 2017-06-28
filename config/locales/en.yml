@@ -2,3 +2,4 @@ en:
   layouts:
     application:
       app_name: "Social Life"
+  follow_different: "must be diffent than follower"

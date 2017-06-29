@@ -1,0 +1,235 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+// Basic color
+$black: #000;
+$gray: #777;
+$white: #fff;
+
+// Advance color
+$black-alpha: rgba(0, 0, 0, 0);
+$gray-darker: #282828;
+$gray-light1: #817f7f;
+$gray-light2: #999;
+$sl-blue: #3b5998;
+$sl-blue-light: #5b78b3;
+$white-darker-1: #b8b8b8;
+
+// Common
+html,
+body {
+  background: $white;
+  font-size: 100%;
+}
+
+ul,
+label {
+  margin: 0;
+  padding: 0;
+}
+
+// Mixin for important
+@mixin link-color-1($content:null) {
+  background-color: $sl-blue $content;
+  color: $white $content;
+}
+
+@mixin none-color-1($content:null) {
+  background: none $content;
+  border-color: none $content;
+}
+
+// Placeholder
+%active-link-1 {
+  .active {
+    a,
+    a:focus,
+    a:hover {
+      @include link-color-1(!important);
+    }
+  }
+}
+
+%bar-hover-link-1 {
+  li {
+    a:hover,
+    a:focus {
+      color: $white;
+    }
+  }
+}
+
+%gray-text-link-1 {
+  li > a {
+    color: $gray;
+    font-size: 17px;
+    text-decoration: none;
+  }
+}
+
+%white-text-link-1 {
+  a {
+    color: $white;
+    font-size: 17px;
+    text-decoration: none;
+    transition: .5s all;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+// Banner body
+.banner-body {
+  background: image-url('pattern.jpg') 0 0;
+  min-height: 500px;
+  padding-top: 5em;
+}
+
+// Hvr-bounce
+.hvr-bounce-to-bottom {
+  backface-visibility: hidden;
+  box-shadow: 0 0 1px $black-alpha;
+  display: inline-block;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  transform: translateZ(0);
+  transition-duration: .5s;
+  transition-property: color;
+  vertical-align: middle;
+}
+
+.hvr-bounce-to-bottom::before {
+  background: $sl-blue;
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition-duration: .5s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  z-index: -1;
+}
+
+.hvr-bounce-to-bottom:hover,
+.hvr-bounce-to-bottom:focus,
+.hvr-bounce-to-bottom:active {
+  color: $white;
+}
+
+.hvr-bounce-to-bottom:hover::before,
+.hvr-bounce-to-bottom:focus::before,
+.hvr-bounce-to-bottom:active::before {
+  transform: scaleY(1);
+  transition-timing-function: cubic-bezier(.52, 1.64, .37, .66);
+}
+
+// Navbar all
+.navbar-collapse {
+  padding: 0;
+}
+
+.navbar-default {
+  @include none-color-1;
+  font-size: .6em;
+
+  .navbar-brand {
+    .home-link {
+      color: $sl-blue;
+      font-size: 2.2em;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+
+  .navbar-nav {
+    @extend %gray-text-link-1;
+    @extend %active-link-1;
+    @extend %bar-hover-link-1;
+  }
+}
+
+.navbar-nav {
+  margin: 0 0 0 2em;
+}
+
+// Footer
+.footer {
+  background: $gray-darker;
+  padding: 2em 0;
+  text-align: center;
+
+  a {
+    color: $white-darker-1;
+  }
+
+  p {
+    color: $gray-light1;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+.search-form {
+  margin-left: 85px;
+}
+
+.sign-in {
+  color: $white;
+  float: right;
+  margin-top: 7px;
+
+  ul {
+    background: $sl-blue;
+    margin: 0;
+    padding: 5px 15px;
+
+    li {
+      @extend %white-text-link-1;
+      color: $white;
+      display: inline-block;
+    }
+  }
+}
+
+// Main body
+.main-body {
+  background: $white;
+  min-height: 600px;
+  padding: 0 3.5em 3.5em;
+}
+
+// About
+.about-text,
+.contact-text {
+  h3 {
+    color: $sl-blue;
+    font-size: 32px;
+    margin: 0;
+    padding: 2em 0 1em;
+    text-align: center;
+  }
+}
+
+.about-info,
+.contact-info {
+  text-align: center;
+
+  h4 {
+    color: $sl-blue-light;
+    font-size: 25px;
+    margin: 0;
+  }
+
+  p {
+    color: $gray-light2;
+    font-size: 18px;
+    line-height: 1.8em;
+    margin: 2em 0;
+  }
+}

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t ".app_name" %></title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag "application", media: "all",
-      "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <title><%= yield :title %> | <%= t "app_title" %></title>
+    <%= render "layouts/rails_head" %>
   </head>
   <body>
-    <%= yield %>
+    <div class="banner-body abt">
+      <div class="container">
+        <%= render "layouts/header" %>
+        <div class="main-body">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>

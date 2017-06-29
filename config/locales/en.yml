@@ -1,5 +1,24 @@
 en:
-  layouts:
-    application:
-      app_name: "Social Life"
+  about: "About"
+  app_name: "Social Life"
+  app_title: "Social Life - Yet Another Blogger"
+  author: "Thanh-Hung Chu"
+  author_mail: "thanhhungchu95@gmail.com"
+  contact: "Contact"
+  home: "Home"
+  posts: "Posts"
+  register: "Register"
+  signin: "Sign in"
+  users: "Users"
   follow_different: "must be diffent than follower"
+
+  layouts:
+    footer:
+      mark: "© %{year} Social Life. All rights reserved | Create by "
+    header:
+      search: "Search..."
+  statics:
+    about:
+      about_desc: "This is about page for Social Life."
+    contact:
+      contact_desc: "This is contact page for Social Life."

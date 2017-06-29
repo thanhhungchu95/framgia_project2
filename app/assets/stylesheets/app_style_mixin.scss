@@ -1,0 +1,12 @@
+@import 'app_style_variable';
+
+// Mixin for important
+@mixin link-color-1($content:null) {
+  background-color: $sl-blue $content;
+  color: $white $content;
+}
+
+@mixin none-color-1($content:null) {
+  background: none $content;
+  border-color: none $content;
+}

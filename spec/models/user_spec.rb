@@ -14,7 +14,6 @@ RSpec.describe User, type: :model do
   context "validates" do
     it do
       is_expected.to validate_presence_of :name
-      is_expected.to validate_uniqueness_of(:email).case_insensitive
       is_expected.to validate_length_of(:password).is_at_least Settings.min_password_length
     end
   end

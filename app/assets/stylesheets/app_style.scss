@@ -1,19 +1,8 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-
-// Basic color
-$black: #000;
-$gray: #777;
-$white: #fff;
-
-// Advance color
-$black-alpha: rgba(0, 0, 0, 0);
-$gray-darker: #282828;
-$gray-light1: #817f7f;
-$gray-light2: #999;
-$sl-blue: #3b5998;
-$sl-blue-light: #5b78b3;
-$white-darker-1: #b8b8b8;
+@import 'app_style_variable';
+@import 'app_style_mixin';
+@import 'app_style_placeholder';
 
 // Common
 html,
@@ -26,58 +15,6 @@ ul,
 label {
   margin: 0;
   padding: 0;
-}
-
-// Mixin for important
-@mixin link-color-1($content:null) {
-  background-color: $sl-blue $content;
-  color: $white $content;
-}
-
-@mixin none-color-1($content:null) {
-  background: none $content;
-  border-color: none $content;
-}
-
-// Placeholder
-%active-link-1 {
-  .active {
-    a,
-    a:focus,
-    a:hover {
-      @include link-color-1(!important);
-    }
-  }
-}
-
-%bar-hover-link-1 {
-  li {
-    a:hover,
-    a:focus {
-      color: $white;
-    }
-  }
-}
-
-%gray-text-link-1 {
-  li > a {
-    color: $gray;
-    font-size: 17px;
-    text-decoration: none;
-  }
-}
-
-%white-text-link-1 {
-  a {
-    color: $white;
-    font-size: 17px;
-    text-decoration: none;
-    transition: .5s all;
-
-    &:hover {
-      color: $black;
-    }
-  }
 }
 
 // Banner body

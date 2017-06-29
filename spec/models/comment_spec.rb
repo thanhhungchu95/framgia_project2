@@ -8,9 +8,6 @@ RSpec.describe Comment, type: :model do
     end
   end
   context "validates" do
-    it do
-      is_expected.to validate_numericality_of(:post_id).only_integer
-      is_expected.to validate_presence_of :content
-    end
+    it {is_expected.to validate_presence_of :content}
   end
 end

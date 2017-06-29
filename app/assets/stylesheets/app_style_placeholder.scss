@@ -1,0 +1,43 @@
+@import 'app_style_variable';
+@import 'app_style_mixin';
+
+// Placeholder
+%active-link-1 {
+  .active {
+    a,
+    a:focus,
+    a:hover {
+      @include link-color-1(!important);
+    }
+  }
+}
+
+%bar-hover-link-1 {
+  li {
+    a:hover,
+    a:focus {
+      color: $white;
+    }
+  }
+}
+
+%gray-text-link-1 {
+  li > a {
+    color: $gray;
+    font-size: 17px;
+    text-decoration: none;
+  }
+}
+
+%white-text-link-1 {
+  a {
+    color: $white;
+    font-size: 17px;
+    text-decoration: none;
+    transition: .5s all;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}

@@ -29,6 +29,7 @@ group :development, :test do
   gem "reek"
   gem "rspec"
   gem "rspec-collection_matchers"
+  gem "rspec-html-matchers"
   gem "rspec-rails"
   gem "rubocop", "~> 0.35.1", require: false
   gem "rubocop-checkstyle_formatter", require: false

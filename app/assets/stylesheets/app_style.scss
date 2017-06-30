@@ -113,7 +113,7 @@ label {
 }
 
 .search-form {
-  margin-left: 85px;
+  margin-right: -5px;
 }
 
 .sign-in {
@@ -168,5 +168,160 @@ label {
     font-size: 18px;
     line-height: 1.8em;
     margin: 2em 0;
+  }
+}
+
+// Sign-up
+.sign-up-form {
+  padding: 0 10em 7em;
+
+  h3 {
+    color: $sl-blue;
+    font-size: 32px;
+    margin: 0;
+    padding: 3em 0 0;
+    text-align: center;
+  }
+
+  h5 {
+    color: $sl-blue-light;
+    font-size: 20px;
+    margin: 2em 0 1em;
+  }
+
+  small {
+    color: $gray-light2;
+    display: block;
+    font-size: 18px;
+    line-height: 1.8em;
+    margin: .5em 0;
+    text-align: center;
+  }
+}
+
+.sign-up-field {
+  li {
+    list-style: none;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+
+    label {
+      color: $gray-darker;
+      display: inline-block;
+      float: left;
+      font-size: 20px;
+      font-weight: 500;
+      margin-top: 5px;
+      width: 20%;
+    }
+
+    .form-control {
+      display: inline-block;
+      float: left;
+      font-size: 18px;
+      height: 40px;
+      width: 80%;
+    }
+  }
+}
+
+.register-btn,
+.signin-btn,
+.create-account-btn {
+  background: $sl-blue-light;
+  border: 0;
+  color: $white;
+  font-size: 17px;
+  outline: none;
+  transition: .5s all;
+
+  &:hover {
+    background: $sl-blue;
+    color: $white;
+  }
+}
+
+.register-btn {
+  margin: 0 30% .5em;
+  padding: 8px 0;
+  width: 40%;
+}
+
+.signin-btn {
+  margin: 0 40% .5em 20%;
+  padding: 6px 0;
+  width: 40%;
+}
+
+.create-account-btn {
+  border-radius: unset;
+  margin: 1.5em 0 .5em;
+  padding: 6px 0;
+  width: 40%;
+}
+
+.sign-in-remember {
+  margin-bottom: 1em;
+
+  label {
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+.login-left {
+  h3 {
+    color: $sl-blue;
+    font-size: 30px;
+    margin: 0;
+    padding: 1em 0 0;
+    text-align: center;
+  }
+
+  small {
+    color: $gray-light2;
+    display: block;
+    font-size: 16px;
+    line-height: 1.2em;
+    margin: .5em 0 1.5em;
+    text-align: center;
+  }
+}
+
+.login-right {
+  h3 {
+    color: $sl-blue;
+    font-size: 30px;
+    margin: 0;
+    padding: 1em 0 0;
+  }
+
+  p {
+    color: $gray-light1;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+}
+
+.sign-in-field {
+  li {
+    display: grid;
+    list-style: none;
+    margin-bottom: 1em;
+    overflow: hidden;
+
+    label {
+      color: $gray-darker;
+      float: left;
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+
+    .form-control {
+      float: left;
+      font-size: 12px;
+      height: 30px;
+    }
   }
 }

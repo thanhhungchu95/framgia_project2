@@ -29,6 +29,13 @@
   }
 }
 
+%hover-avatar-change-1 {
+  &:hover {
+    background: $sl-blue-light;
+    color: $black;
+  }
+}
+
 %white-text-link-1 {
   a {
     color: $white;
@@ -37,6 +44,7 @@
     transition: .5s all;
 
     &:hover {
+      background: inherit;
       color: $black;
     }
   }

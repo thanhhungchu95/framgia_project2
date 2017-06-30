@@ -1,0 +1,36 @@
+<% provide :title, t("signin") %>
+<div class="sign-in-form">
+  <div class="col-md-5 login-left">
+    <h3><%= t "signin" %></h3>
+    <small><%= t ".signin_tip" %></small>
+    <%= form_for resource, url: signin_path(resource), class: "sign-in" do |f| %>
+      <%= devise_error_messages! %>
+
+      <ul class="sign-in-field">
+        <li>
+          <%= f.label :email, t(".email") %>
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </li>
+        <li>
+          <%= f.label :password, t(".passwd") %>
+          <%= f.password_field :password, class: "form-control" %>
+        </li>
+      </ul>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="sign-in-remember">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, t(".remember") %>
+        </div>
+      <% end %>
+
+      <%= f.submit t("signin"), class: "signin-btn" %>
+    <% end %>
+  </div>
+  <div class="col-md-5 col-md-offset-2 login-right">
+    <h3><%= t ".new_regis" %></h3>
+    <p><%= t ".signup_desc" %></p>
+    <%= link_to t(".create"), signup_path, class: "btn create-account-btn" %>
+  </div>
+  <div class="clearfix"></div>
+</div>

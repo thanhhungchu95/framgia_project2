@@ -9,8 +9,32 @@ en:
   posts: "Posts"
   register: "Register"
   signin: "Sign in"
+  signout: "Sign out"
   users: "Users"
   follow_different: "must be diffent than follower"
+
+  devise:
+    registrations:
+      new:
+        confirm: "Confirmation*"
+        email: "Email*"
+        name: "Fullname*"
+        passwd: "Password*"
+        personal: "Personal Information"
+        register_here: "Register Here"
+        signin_info: "Signin Information"
+        signup_tip: "Please fill this form to register an account. It's very quickly."
+    sessions:
+      new:
+        create: "Create account"
+        email: "Email"
+        new_regis: "New Registration"
+        passwd: "Password"
+        signin_tip: "Welcome, please enter the following to continue"
+        signup_desc: "By creating an account with my blog, you will be able to \
+          create your post, write your comment or read others post from other \
+          user."
+        remember: "Remember me on this computer"
 
   layouts:
     footer:

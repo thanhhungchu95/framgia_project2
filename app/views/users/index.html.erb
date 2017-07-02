@@ -1,0 +1,9 @@
+<% provide :title, t(".users") %>
+<div class="all-users">
+  <% if @users.any? %>
+    <ul class="show-users">
+      <h3><%= t ".all_users", count: @users.size %></h3>
+      <%= render @users %>
+    </ul>
+  <% end %>
+</div>

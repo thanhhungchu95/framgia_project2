@@ -1,0 +1,56 @@
+<% provide :title, t(".update_profile") %>
+<div class="update-form">
+  <h3><%= t ".edit_information" %></h3>
+  <%= form_for resource, url: registration_path(resource), html: {method: :put} do |f| %>
+    <%= devise_error_messages! %>
+
+    <h5><%= t ".personal" %></h5>
+    <ul class="update-field">
+      <li>
+        <%= f.label t(".change_avatar"), class: "btn get-file", for: "file-browser" %>
+        <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png",
+          class: "avatar-field", id: "file-browser" %>
+        <%= image_tag resource.avatar, class: "avatar-img", id: "image-browser" %>
+      </li>
+      <li>
+        <%= f.label :name, t(".name") %>
+        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+      </li>
+      <li>
+        <%= f.label :email, t(".email") %>
+        <%= f.email_field :email, class: "form-control" %>
+      </li>
+      <li>
+        <%= f.label :phone, t(".phone") %>
+        <%= f.phone_field :phone, class: "form-control" %>
+      </li>
+      <li>
+        <%= f.label :biography, t(".biography") %>
+        <%= f.text_area :biography, class: "form-control" %>
+      </li>
+    </ul>
+
+    <h5><%= t ".signin_info" %></h5>
+    <ul class="update-field">
+      <li>
+        <%= f.label :password do %>
+          <%= t ".password" %> <small><%= t ".blank_password" %></small>
+        <% end %>
+        <%= f.password_field :password, class: "form-control" %>
+      </li>
+      <li>
+        <%= f.label :password_confirmation, t(".confirm") %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </li>
+      <li>
+        <%= f.label :current_password do %>
+          <%= t ".current_password" %>
+          <small><%= t ".current_password_require" %></small>
+        <% end %>
+        <%= f.password_field :current_password, class: "form-control" %>
+      </li>
+    </ul>
+
+    <%= f.submit t(".update"), class: "update-btn" %>
+  <% end %>
+</div>

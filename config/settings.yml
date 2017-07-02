@@ -5,3 +5,6 @@ min_password_length: 6
 max_password_length: 32
 max_title_length: 100
 max_tag_length: 15
+default_per_page: 6
+user_per_page: 8
+no_avatar: "no-avatar.png"

@@ -15,6 +15,26 @@ en:
 
   devise:
     registrations:
+      edit:
+        biography: "Biography"
+        birthday: "Birthday"
+        change_avatar: "Change avatar"
+        confirm: "Confirmation"
+        current_password: "Current Password"
+        current_password_require: "(please type your current password to save change)"
+        edit_information: "Edit Information"
+        email: "Email*"
+        female: "Female"
+        male: "Male"
+        name: "Fullname*"
+        other: "Other"
+        password: "Password"
+        blank_password: "(leave blank if you don't want change)"
+        personal: "Personal Information"
+        phone: "Phone number"
+        signin_info: "Sign in Information"
+        update: "Save"
+        update_profile: "Update profile"
       new:
         confirm: "Confirmation*"
         email: "Email*"
@@ -40,9 +60,49 @@ en:
     footer:
       mark: "© %{year} Social Life. All rights reserved | Create by "
     header:
+      hi: "Hi, "
+      profile: "Profile"
       search: "Search..."
+      settings: "Settings"
+  users:
+    index:
+      all_users: "All Users (%{count})"
+      users: "Users"
+    show:
+      about: "About Me"
+      admin: "Administrator"
+      biography: "Biography"
+      edit_profile: "Edit Profile"
+      email: "Email address"
+      join_time: "Join Social Life from"
+      level: "Level"
+      my_posts: "Posts"
+      number_post: "Number of posts: "
+      phone: "Phone number"
+      user: "Normal User"
+      view_my_posts: "Click here to view my posts"
   statics:
     about:
       about_desc: "This is about page for Social Life."
     contact:
       contact_desc: "This is contact page for Social Life."
+
+  time:
+    formats:
+      join_time: "%b %d, %Y"
+  views:
+    pagination:
+      first: "◄◄ First"
+      last: "Last ►►"
+      previous: "◄ Prev"
+      next: "Next ►"
+      truncate: "●●●"
+    helpers:
+      page_entries_info:
+        one_page:
+          display_entries:
+            zero: "%{entry_name} not found"
+            one: "Displaying <b>1</b> %{entry_name}"
+            other: "Displaying <b>all %{count}</b> %{entry_name}"
+        more_pages:
+          display_entries: "Displaying %{entry_name} <b>%{first} - %{last}</b> of <b>%{total}</b> in total"

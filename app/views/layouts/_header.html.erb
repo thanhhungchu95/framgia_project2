@@ -14,9 +14,11 @@
           <li class="hvr-bounce-to-bottom", id="active-about">
             <%= link_to t("about"), about_path %>
           </li>
-          <li class="hvr-bounce-to-bottom", id="active-users">
-            <%= link_to t("users"), "#" %>
-          </li>
+          <% if user_signed_in? %>
+            <li class="hvr-bounce-to-bottom", id="active-users">
+              <%= link_to t(".users"), users_path %>
+            </li>
+          <% end %>
           <li class="hvr-bounce-to-bottom", id="active-posts">
             <%= link_to t("posts"), "#" %>
           </li>
@@ -24,20 +26,37 @@
             <%= link_to t("contact"), contact_path %>
           </li>
         </ul>
+        <div class="sign-in">
+          <ul>
+            <% if user_signed_in? %>
+              <li class="dropdown">
+                <%= link_to "#", class: "dropdown-toggle", data: {toggle: :dropdown} do %>
+                  <%= t ".hi" %><%= current_user.name %>
+                  <b class="glyphicon glyphicon-menu-hamburger"></b>
+                <% end %>
+                <ul class="dropdown-menu">
+                  <li><%= link_to t(".profile"), current_user %></li>
+                  <li>
+                    <%= link_to t(".settings"), edit_path(current_user) %>
+                  </li>
+                  <div class="divider"></div>
+                  <li><%= link_to t("signout"), signout_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to t("signin"), signin_path %></li> /
+              <li><%= link_to t("register"), signup_path %></li>
+            <% end %>
+          </ul>
+        </div>
         <div class="search">
-          <%= form_tag "#", method: :get, class: "navbar-form navbar-left search-form" do %>
+          <%= form_tag "#", method: :get, class: "navbar-form navbar-right search-form" do %>
             <%= text_field_tag :q, params[:q], placeholder: t(".search"),
               class: "form-control" %>
             <%= button_tag "search", class: "btn btn-default" do %>
               <span class="glyphicon glyphicon-search"></span>
             <% end %>
           <% end %>
-        </div>
-        <div class="sign-in">
-          <ul>
-            <li><%= link_to t("signin"), "#" %></li> /
-            <li><%= link_to t("register"), "#" %></li>
-          </ul>
         </div>
       </div>
     </div>

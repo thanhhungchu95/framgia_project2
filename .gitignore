@@ -27,3 +27,8 @@
 # Ignore framgia-ci config report
 .framgia-ci-reports/
 .framgia-ci-result.temp.yml
+
+# Ignore avatar folder
+/public/avatars
+/public/post_pictures
+/public/uploads

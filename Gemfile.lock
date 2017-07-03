@@ -66,6 +66,10 @@ GEM
       bundler (~> 1.2)
       thor (~> 0.18)
     byebug (9.0.6)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     code_analyzer (0.4.7)
       sexp_processor
     codeclimate-engine-rb (0.4.0)
@@ -109,6 +113,8 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.18)
     formatador (0.2.5)
     globalid (0.4.0)
@@ -351,12 +357,14 @@ DEPENDENCIES
   brakeman
   bundler-audit
   byebug
+  carrierwave
   coffee-rails (~> 4.2)
   config
   database_cleaner
   devise
   eslint-rails
   factory_girl_rails
+  faker
   guard-rspec
   jbuilder (~> 2.5)
   jquery-rails

@@ -226,6 +226,7 @@ label {
 }
 
 .register-btn,
+.update-btn,
 .signin-btn,
 .create-account-btn {
   background: $sl-blue-light;
@@ -241,7 +242,8 @@ label {
   }
 }
 
-.register-btn {
+.register-btn,
+.update-btn {
   margin: 0 30% .5em;
   padding: 8px 0;
   width: 40%;
@@ -320,8 +322,199 @@ label {
 
     .form-control {
       float: left;
-      font-size: 12px;
+      font-size: 15px;
       height: 30px;
     }
+  }
+}
+
+.update-form {
+  padding: 0 10em 7em;
+
+  h3 {
+    color: $sl-blue;
+    font-size: 30px;
+    margin: 0;
+    padding: 1em 0 0;
+    text-align: center;
+  }
+
+  h5 {
+    color: $sl-blue-light;
+    font-size: 20px;
+    margin: 2em 0 1em;
+  }
+}
+
+.update-field {
+  li {
+    display: grid;
+    list-style: none;
+    margin-bottom: 1em;
+    overflow: hidden;
+
+    label {
+      color: $gray-darker;
+      float: left;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    small {
+      font-size: 14px;
+      font-weight: 200;
+    }
+
+    textarea {
+      height: 120px;
+      resize: none;
+      scroll-behavior: auto;
+    }
+
+    .avatar-field {
+      height: 0;
+      visibility: hidden;
+    }
+
+    .avatar-img {
+      position: absolute;
+    }
+
+    .get-file {
+      @extend %hover-avatar-change-1;
+      background: $sl-blue;
+      border-radius: unset;
+      color: $white;
+      margin: 120px 0 0 180px;
+      width: 140px;
+    }
+
+    .form-control {
+      float: left;
+      font-size: 16px;
+    }
+  }
+}
+
+.avatar-img {
+  height: 160px;
+  width: 160px;
+}
+
+.avatar-img-small {
+  height: 50px;
+  width: 50px;
+}
+
+.profile {
+  clear: both;
+  padding-top: 30px;
+
+  .edit-btn {
+    background: $sl-blue;
+    color: $white;
+    float: right;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 5px 20px;
+    text-decoration: none;
+
+    &:hover {
+      background: $sl-blue-light;
+      color: $black;
+    }
+  }
+
+  h3 {
+    color: $sl-blue;
+    font-size: 32px;
+    font-weight: 400;
+  }
+
+  .sidebar {
+    padding: 10px;
+    position: absolute;
+
+    .user-stats {
+      background: $gray-light3;
+      font-size: 15px;
+      min-height: 240px;
+      padding: 15px 5px;
+      width: 160px;
+    }
+  }
+
+  .content {
+    margin-left: 200px;
+    max-width: 400px;
+
+    h3 {
+      color: $black;
+      font-size: 22px;
+    }
+
+    .vertical-divider {
+      border-top: 2px solid $gray-light1;
+      height: 1px;
+      margin: 20px 0;
+      width: 800px;
+    }
+  }
+}
+
+.user-info-desc {
+  list-style: none;
+
+  li {
+    margin-bottom: 20px;
+
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+      width: 800px;
+      word-wrap: break-word;
+    }
+
+    .info-field {
+      background: $sl-blue;
+      color: $white;
+      cursor: inherit;
+      padding: 5px;
+      width: 120px;
+    }
+
+    .info-value {
+      color: $black;
+    }
+  }
+}
+
+.dropdown-menu {
+  border-radius: unset;
+  float: right;
+  min-width: 120px;
+  top: 125%;
+}
+
+.show-users {
+  overflow: hidden;
+
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+
+    .user-name-info {
+      color: $sl-blue-light;
+      font-size: 18px;
+      margin: 10px 0 0 20px;
+    }
+  }
+
+  h3 {
+    color: $sl-blue;
+    font-size: 32px;
+    margin: 20px 0;
+    text-align: center;
   }
 }

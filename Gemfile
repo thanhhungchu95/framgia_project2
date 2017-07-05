@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "bootstrap-kaminari-views"
 gem "bootstrap-sass"
+gem "cancancan"
 gem "carrierwave"
 gem "coffee-rails", "~> 4.2"
 gem "config"

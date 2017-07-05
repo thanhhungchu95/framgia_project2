@@ -5,5 +5,6 @@
       <h3><%= t ".all_users", count: @users.size %></h3>
       <%= render @users %>
     </ul>
+    <%= paginate @users, theme: "twitter-bootstrap-3" %>
   <% end %>
 </div>

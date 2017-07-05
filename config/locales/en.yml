@@ -43,7 +43,7 @@ en:
         personal: "Personal Information"
         register_here: "Register Here"
         signin_info: "Signin Information"
-        signup_tip: "Please fill this form to register an account. It's very quickly."
+        signup_tip: "Please fill in this form to register an account. It's very quickly."
     sessions:
       new:
         create: "Create account"
@@ -55,7 +55,6 @@ en:
           create your post, write your comment or read others post from other \
           user."
         remember: "Remember me on this computer"
-
   layouts:
     footer:
       mark: "© %{year} Social Life. All rights reserved | Create by "
@@ -67,6 +66,7 @@ en:
   users:
     index:
       all_users: "All Users (%{count})"
+      not_access: "Please sign-in or signup before access `/users` page"
       users: "Users"
     show:
       about: "About Me"
@@ -77,6 +77,7 @@ en:
       join_time: "Join Social Life from"
       level: "Level"
       my_posts: "Posts"
+      not_access: "Sorry, guest cannot access user profile page. Please sign-in or sign-up before and try again."
       number_post: "Number of posts: "
       phone: "Phone number"
       user: "Normal User"

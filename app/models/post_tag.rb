@@ -4,4 +4,6 @@ class PostTag < ApplicationRecord
 
   validates :post, presence: true, uniqueness: {scope: :tag}
   validates :tag, presence: true
+
+  accepts_nested_attributes_for :tag
 end

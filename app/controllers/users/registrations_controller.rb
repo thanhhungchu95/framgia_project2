@@ -12,4 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit :account_update,
       keys: [:name, :avatar, :phone, :biography]
   end
+
+  def after_update_path_for resource
+    user_path resource
+  end
 end

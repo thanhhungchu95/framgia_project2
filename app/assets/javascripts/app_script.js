@@ -4,6 +4,8 @@ $(document).on('turbolinks:load', function() {
 
   $(id).addClass('active');
 
+  $('.alert').delay(2000).slideUp(1500);
+
   $('input#file-browser').change(function() {
     var reader;
     if (this.files && this.files[0]) {

@@ -1,0 +1,30 @@
+<% provide :title, t(".new_post") %>
+<div class="new-post-form">
+  <h3><%= t ".publish_tip" %></h3>
+  <%= form_for @post, url: create_post_path do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+
+    <%= f.label :title, t(".title") %>
+    <%= f.text_field :title, placeholder: t(".ph_title"), class: "form-control" %>
+
+    <%= label_tag :tag_input, t(".tags") %>
+    <div class="form-group">
+      <div class="tag-type">
+        <%= text_field_tag :tag_input, nil, placeholder: t(".ph_tags"),
+          class: "form-control"%>
+      </div>
+    </div>
+    <div id="tag_param_store">
+    </div>
+
+    <%= f.label :content, t(".content") %>
+    <%= f.text_area :content, placeholder: t(".ph_content"), class: "form-control" %>
+
+    <%= f.label t(".choose_picture"), class: "btn get-file", for: "file-browser" %>
+    <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png",
+      class: "picture-field", id: "file-browser" %>
+    <%= image_tag "", class: "post-picture", id: "image-browser" %>
+
+    <%= f.submit t(".publish"), class: "update-btn get-file" %>
+  <% end %>
+</div>

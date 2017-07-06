@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root to: "statics#home"
   get "/about", to: "statics#about"
   get "/contact", to: "statics#contact"
+  get "/create_post", to: "posts#new"
+  post "/create_post", to: "posts#create"
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions"
@@ -15,4 +17,5 @@ Rails.application.routes.draw do
     delete "/signout", to: "users/sessions#destroy"
   end
   resources :users, only: [:index, :show]
+  resources :posts, except: [:new, :create]
 end

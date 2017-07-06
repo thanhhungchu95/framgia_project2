@@ -6,11 +6,12 @@ en:
   author_mail: "thanhhungchu95@gmail.com"
   contact: "Contact"
   home: "Home"
-  posts: "Posts"
+  posts_title: "Posts"
   register: "Register"
   signin: "Sign in"
   signout: "Sign out"
-  users: "Users"
+  tags_title: "Tags"
+  users_title: "Users"
   follow_different: "must be diffent than follower"
 
   devise:
@@ -61,8 +62,32 @@ en:
     header:
       hi: "Hi, "
       profile: "Profile"
-      search: "Search..."
+      search: "What are you looking for?"
       settings: "Settings"
+  posts:
+    new:
+      choose_picture: "Choose picture"
+      content: "Content"
+      new_post: "New post"
+      not_access: "Please sign-in before create new post."
+      ph_content: "Writting some story ..."
+      ph_tags: "Tags for your post. Enter comma `,` after tag name to add a new tag."
+      ph_title: "About this post ..."
+      publish: "Publish"
+      publish_tip: "Are you ready publish new post, please fill in this form. Then click [Publish] button."
+      tags: "Tags"
+      title: "Title"
+    create:
+      created: "Post created done."
+      not_created: "Post created failed."
+    show_main_content:
+      comments: "Comments"
+      post_time: "Post time"
+      views: "Views"
+    show:
+      fb: "Facebook"
+      gg: "Google+"
+      tt: "Twitter"
   users:
     index:
       all_users: "All Users (%{count})"
@@ -91,6 +116,7 @@ en:
   time:
     formats:
       join_time: "%b %d, %Y"
+      post_time: "%b %d, %Y"
   views:
     pagination:
       first: "◄◄ First"

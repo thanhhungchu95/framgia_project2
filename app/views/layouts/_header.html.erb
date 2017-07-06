@@ -8,22 +8,16 @@
       </div>
       <div class="collapse navbar-collapse nav-wil">
         <ul class="nav navbar-nav">
-          <li class="hvr-bounce-to-bottom", id="active-home">
-            <%= link_to t("home"), root_path %>
-          </li>
-          <li class="hvr-bounce-to-bottom", id="active-about">
-            <%= link_to t("about"), about_path %>
+          <li class="hvr-bounce-to-bottom", id="active-posts">
+            <%= link_to t("posts_title"), "#" %>
           </li>
           <% if user_signed_in? %>
             <li class="hvr-bounce-to-bottom", id="active-users">
-              <%= link_to t(".users"), users_path %>
+              <%= link_to t("users_title"), users_path %>
             </li>
           <% end %>
-          <li class="hvr-bounce-to-bottom", id="active-posts">
-            <%= link_to t("posts"), "#" %>
-          </li>
-          <li class="hvr-bounce-to-bottom", id="active-contact">
-            <%= link_to t("contact"), contact_path %>
+          <li class="hvr-bounce-to-bottom", id="active-tags">
+            <%= link_to t("tags_title"), "#" %>
           </li>
         </ul>
         <div class="sign-in">
@@ -44,11 +38,31 @@
                 </ul>
               </li>
             <% else %>
-              <li><%= link_to t("signin"), signin_path %></li> /
+              <li><%= link_to t("signin"), signin_path %></li>
+              <li class="space">|</li>
               <li><%= link_to t("register"), signup_path %></li>
             <% end %>
           </ul>
         </div>
+        <span class="info-sign">
+          <div class="dropdown">
+            <%= link_to "#", class: "dropdown-toggle", data: {toggle: :dropdown} do %>
+              <b class="glyphicon glyphicon-info-sign"></b>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li><%= link_to t("about"), about_path %></li>
+              <li><%= link_to t("contact"), contact_path %></li>
+            </ul>
+          </div>
+        </span>
+        <% if user_signed_in? %>
+          <span class="pencil">
+            <%= link_to create_post_path do %>
+              <b class="glyphicon glyphicon-pencil"></b>
+            <% end %>
+          </span>
+        <% end %>
+        </span>
         <div class="search">
           <%= form_tag "#", method: :get, class: "navbar-form navbar-right search-form" do %>
             <%= text_field_tag :q, params[:q], placeholder: t(".search"),

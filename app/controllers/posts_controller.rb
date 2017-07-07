@@ -4,6 +4,17 @@ class PostsController < ApplicationController
   before_action :increase_view_count, only: :show
   before_action :build_post, only: :new
 
+  def index
+    if user = User.find_by(id: params[:user_id])
+      post_filter = Post.of(user).select_field.created_time_sort
+      @posts = post_filter.paginer(params[:page]).per Settings.post_per_page
+      @user = user
+    else
+      flash[:warning] = t "page_not_found"
+      redirect_to root_url
+    end
+  end
+
   def create
     @post = current_user.posts.build post_params
 

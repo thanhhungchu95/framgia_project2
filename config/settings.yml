@@ -8,3 +8,6 @@ max_tag_length: 15
 default_per_page: 6
 user_per_page: 8
 no_avatar: "no-avatar.png"
+hot_authors_amount: 3
+post_per_page: 6
+preview_content_length: 360

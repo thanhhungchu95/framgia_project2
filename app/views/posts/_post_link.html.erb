@@ -1,0 +1,28 @@
+<li>
+  <small class="glyphicon glyphicon-calendar"></small>
+  <%= content_tag :span, data: {toggle: "tooltip", placement: "bottom"},
+    title: t(".post_time") do %>
+    <%= l post.created_at, format: :post_time %>
+  <% end %>
+</li>
+<li>
+  <small class="glyphicon glyphicon-user"></small>
+  <%= content_tag :span, data: {toggle: "tooltip", placement: "bottom"},
+    title: t(".authors") do %>
+    <%= link_to post.user.name, post.user %>
+  <% end %>
+</li>
+<li>
+  <small class="glyphicon glyphicon-comment"></small>
+  <%= content_tag :span, data: {toggle: "tooltip", placement: "bottom"},
+    title: t(".comments"), class: "badge" do %>
+    <%= post.comments.size %>
+  <% end %>
+</li>
+<li>
+  <small class="glyphicon glyphicon-eye-open"></small>
+  <%= content_tag :span, data: {toggle: "tooltip", placement: "bottom"},
+    title: t(".views"), class: "badge" do %>
+    <%= post.view_count %>
+  <% end %>
+</li>

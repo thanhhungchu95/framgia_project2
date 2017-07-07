@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def users_list
-    User.select(:id, :name, :avatar).name_sort.paginer(params[:page])
+    User.select_field.name_sort.paginer(params[:page])
       .per Settings.user_per_page
   end
 end

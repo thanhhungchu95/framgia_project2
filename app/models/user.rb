@@ -7,6 +7,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   scope :name_sort, ->{order name: :asc}
+  scope :select_field, ->{select :id, :avatar, :name, :created_at}
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy

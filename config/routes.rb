@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index, :show]
   resources :posts, except: [:new, :create]
+  get "*path", to: redirect("404")
+  post "*path", to: redirect("404")
 end

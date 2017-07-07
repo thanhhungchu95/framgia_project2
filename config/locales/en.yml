@@ -84,10 +84,19 @@ en:
       comments: "Comments"
       post_time: "Post time"
       views: "Views"
+    index:
+      all_post_by: "All posts by %{user}"
     show:
       fb: "Facebook"
       gg: "Google+"
       tt: "Twitter"
+    post:
+      read_more: "Read more"
+    post_link:
+      authors: "Authors"
+      comments: "Comments"
+      post_time: "Posted at"
+      views: "Views"
   users:
     index:
       all_users: "All Users (%{count})"
@@ -107,11 +116,22 @@ en:
       phone: "Phone number"
       user: "Normal User"
       view_my_posts: "Click here to view my posts"
+    user:
+      join_time: "Join at: "
+      number_post: "Number of post: "
   statics:
     about:
       about_desc: "This is about page for Social Life."
     contact:
       contact_desc: "This is contact page for Social Life."
+    home:
+      follow: "Following"
+      get_start: "Getting started"
+      hot_authors: "Hot Authors"
+      new: "Newest"
+      popular: "Popular"
+      welcome: "Welcome to Social Life"
+      welcome_tip: "From here, you can read some post or click the button below to join with us."
 
   time:
     formats:
@@ -133,3 +153,5 @@ en:
             other: "Displaying <b>all %{count}</b> %{entry_name}"
         more_pages:
           display_entries: "Displaying %{entry_name} <b>%{first} - %{last}</b> of <b>%{total}</b> in total"
+
+  page_not_found: "Page you request not found"

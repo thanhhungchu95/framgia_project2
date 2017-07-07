@@ -1,0 +1,8 @@
+<%= provide :title, t(".all_post_by", user: @user.name) %>
+<div class="posts-list">
+  <h3><%= t ".all_post_by", user: @user.name %></h3>
+  <ul>
+    <%= render @posts %>
+  </ul>
+  <%= paginate @posts, theme: "twitter-bootstrap-3" %>
+</div>

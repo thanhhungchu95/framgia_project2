@@ -21,7 +21,7 @@ label {
 .banner-body {
   background: image-url('pattern.jpg') 0 0;
   min-height: 500px;
-  padding-top: 5em;
+  padding-top: 2em;
 }
 
 // Hvr-bounce
@@ -185,7 +185,7 @@ label {
 .main-body {
   background: $white;
   min-height: 600px;
-  padding: 0 3.5em 3.5em;
+  padding: 1.5em 3.5em 3.5em;
 }
 
 // About
@@ -762,5 +762,113 @@ label {
     cursor: default;
     font-size: 15px;
     margin: 5px;
+  }
+}
+
+.welcome {
+  text-align: center;
+  width: 100%;
+
+  h2 {
+    color: $sl-blue;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    color: $gray-light1;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.post-bar {
+  background: $sl-blue-light;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: bold;
+  height: 70px;
+  padding: 20px;
+
+  span {
+    a {
+      color: $white;
+      margin-right: 20px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      border-bottom: 3px solid;
+      color: $black;
+      transition: .5s all;
+    }
+  }
+}
+
+.posts-list,
+.users-list {
+  padding: 15px;
+}
+
+.posts-list {
+  li {
+    list-style: none;
+  }
+
+  h3 {
+    color: $sl-blue;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+.users-list {
+  border-left: 1px solid $gray-light3;
+
+  li {
+    border: 1px solid $gray-light1;
+    border-radius: 4px;
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+}
+
+.post-attribute {
+  border-bottom: 1px solid $gray-light3;
+  margin: -50px 0 40px 60px;
+  overflow: hidden;
+
+  .post-title,
+  .post-content,
+  .tag-list,
+  .post-link,
+  .read-more-btn {
+    margin-bottom: 10px;
+  }
+
+  .read-more-btn {
+    background: $sl-blue;
+    border-radius: unset;
+    color: $white;
+    float: right;
+    font-weight: 700;
+    padding: 6px 25px;
+    transition: .5s all;
+
+    &:hover {
+      background: $sl-blue-light;
+      color: $black;
+    }
+  }
+}
+
+.user-attribute {
+  margin: -50px 0 40px 60px;
+
+  p {
+    font-size: 15px;
   }
 }

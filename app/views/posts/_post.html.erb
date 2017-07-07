@@ -1,0 +1,14 @@
+<li>
+  <%= image_tag post.user.avatar, alt: post.user.name, class: "avatar-img-small" %>
+  <div class="post-attribute">
+    <div class="post-title"><%= link_to post.title, post %></div>
+    <ul class="tag-list"><%= render post.tags %></ul>
+    <p class="post-content">
+      <%= truncate post.content, length: Settings.preview_content_length %>
+    </p>
+    <ul class="post-link">
+      <%= render "posts/post_link", post: post %>
+    </ul>
+    <%= link_to t(".read_more"), post, class: "btn btn-default read-more-btn" %>
+  </div>
+</li>

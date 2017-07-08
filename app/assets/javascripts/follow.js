@@ -8,7 +8,6 @@ $(document).on('turbolinks:load', function() {
   $('.follow-btn').on('click', '.follow', function() {
     var url = $(this).attr('href');
     var relationship_id = url.split('/')[2];
-    var follow_text = $(this).attr('data-text');
 
     $.ajax({
       url: url,

@@ -1,41 +1,62 @@
 <% provide :title, @user.name %>
 <div class="profile">
-  <% if user_signed_in? && current_user == @user %>
-    <%= link_to t(".edit_profile"), edit_path(@user), class: "edit-btn" %>
-  <% end %>
-  <h3><%= @user.name %></h3>
-  <div class="sidebar">
-    <p><%= image_tag @user.avatar, class: "avatar-img" %></p>
-    <div class="user-stats">
-      <p><%= t ".join_time" %> <%= l @user.created_at, format: :join_time %></p>
-      <p><%= t ".number_post" %> <%= @user.posts.size %>
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <%= link_to t(".profile"), "#profile", data: {toggle: :tab} %>
+    </li>
+    <li><%= link_to t(".following"), "#following", data: {toggle: :tab} %></li>
+    <li><%= link_to t(".followers"), "#followers", data: {toggle: :tab} %></li>
+  </ul>
+  <div class="tab-content">
+    <div id="profile" class="tab-pane fade in active">
+      <% if user_signed_in? && current_user == @user %>
+        <%= link_to t(".edit_profile"), edit_path(@user), class: "edit-btn" %>
+      <% else %>
+        <div class="follow-in-profile">
+          <%= render "shared/follow_btn", user: @user %>
+        </div>
+      <% end %>
+      <h3><%= @user.name %></h3>
+      <div class="sidebar">
+        <p><%= image_tag @user.avatar, class: "avatar-img" %></p>
+        <div class="user-stats">
+          <p><%= t ".join_time" %> <%= l @user.created_at, format: :join_time %></p>
+          <p><%= t ".number_post" %> <%= @user.posts.size %></p>
+        </div>
+      </div>
+      <div class="content">
+        <h3><%= t ".my_posts" %></h3>
+        <%= link_to t(".view_my_posts"), controller: :posts, action: :index,
+          user_id: @user.id %>
+        <div class="vertical-divider"></div>
+        <h3><%= t ".about" %></h3>
+        <ul class="user-info-desc">
+          <li>
+            <span class="info-field btn"><%= t ".email" %></span>
+            <span class="info-value"><%= @user.email %></span>
+          </li>
+          <li>
+            <span class="info-field btn"><%= t ".phone" %></span>
+            <span class="info-value"><%= @user.phone %></span>
+          </li>
+          <li>
+            <span class="info-field btn"><%= t ".level" %></span>
+            <span class="info-value">
+              <%= @user.is_admin? ? t(".admin") : t(".user") %>
+            </span>
+          </li>
+          <li>
+            <span class="info-field btn"><%= t ".biography" %></span>
+            <p class="info-value"><%= @user.biography %></p>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="content">
-    <h3><%= t ".my_posts" %></h3>
-    <%= link_to t(".view_my_posts"), controller: :posts, action: :index,
-      user_id: @user.id %>
-    <div class="vertical-divider"></div>
-    <h3><%= t ".about" %></h3>
-    <ul class="user-info-desc">
-      <li>
-        <span class="info-field btn"><%= t ".email" %></span>
-        <span class="info-value"><%= @user.email %></span>
-      </li>
-      <li>
-        <span class="info-field btn"><%= t ".phone" %></span>
-        <span class="info-value"><%= @user.phone %></span>
-      </li>
-      <li>
-        <span class="info-field btn"><%= t ".level" %></span>
-        <span class="info-value">
-          <%= @user.is_admin? ? t(".admin") : t(".user") %>
-        </span>
-      </li>
-      <li>
-        <span class="info-field btn"><%= t ".biography" %></span>
-        <p class="info-value"><%= @user.biography %></p>
-      </li>
-    </ul>
+    <div id="following" class="tab-pane fade">
+      <%= render "shared/follow_user", users: @user.following, title: t(".following") %>
+    </div>
+    <div id="followers" class="tab-pane fade">
+      <%= render "shared/follow_user", users: @user.followers, title: t(".followers") %>
+    </div>
   </div>
 </div>

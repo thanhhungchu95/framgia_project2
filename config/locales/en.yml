@@ -13,6 +13,9 @@ en:
   tags_title: "Tags"
   users_title: "Users"
   follow_different: "must be diffent than follower"
+  following: "Following"
+  popular: "Popular"
+  authors: "Author"
 
   devise:
     registrations:
@@ -110,6 +113,8 @@ en:
       biography: "Biography"
       edit_profile: "Edit Profile"
       email: "Email address"
+      follower: "Followers"
+      following: "Following"
       join_time: "Join Social Life from"
       level: "Level"
       my_posts: "Posts"
@@ -123,12 +128,13 @@ en:
       followers: "Followers: "
       join_time: "Join from: "
       number_post: "Number of post: "
+      view_posts: "View my posts"
   statics:
     about:
       about_desc: "This is about page for Social Life."
     contact:
       contact_desc: "This is contact page for Social Life."
-    home:
+    start_page:
       follow: "Following"
       get_start: "Getting started"
       hot_authors: "Hot Authors"
@@ -136,6 +142,8 @@ en:
       popular: "Popular"
       welcome: "Welcome to Social Life"
       welcome_tip: "From here, you can read some post or click the button below to join with us."
+    following:
+      signin_first: "Please sign-in or sign-up before access this page."
 
   time:
     formats:
@@ -167,6 +175,8 @@ en:
     follow_btn:
       follow: "Follow"
       following: "Following"
+    follow_user:
+      users: " users (%{count})"
   comments:
     comment:
       ago: " ago."

@@ -60,3 +60,11 @@ $(document).on('turbolinks:load', function() {
     }
   });
 });
+
+
+$(document).on('turbolinks:load', function() {
+  var title = $(document).attr('title');
+  var id = '#category-' + title.substring(0, title.indexOf('|') - 1).toLowerCase();
+
+  $(id).addClass('category-active');
+});

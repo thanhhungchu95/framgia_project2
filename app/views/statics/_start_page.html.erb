@@ -1,0 +1,28 @@
+<% unless user_signed_in? %>
+  <div class="welcome jumbotron container">
+    <h2><%= t ".welcome" %></h2>
+    <h4><%= t ".welcome_tip" %></h4>
+    <%= link_to t(".get_start"), signin_path, class: "btn btn-primary btn-lg" %>
+  </div>
+<% end %>
+<div class="post-bar">
+  <span id="category-home"><%= link_to t(".new"), root_path %></span>
+  <span id="category-popular"><%= link_to t(".popular"), popular_path %></span>
+  <span id="category-following">
+    <%= link_to t(".follow"), following_path if user_signed_in? %>
+  </span>
+</div>
+<div class="post-main row">
+  <div class="posts-list col-md-9">
+    <ul>
+      <%= render posts %>
+    </ul>
+    <%= paginate posts, theme: "twitter-bootstrap-3" %>
+  </div>
+  <div class="users-list col-md-3">
+    <h4><%= t ".hot_authors" %>
+    <ul>
+      <%= render @users %>
+    </ul>
+  </div>
+</div>

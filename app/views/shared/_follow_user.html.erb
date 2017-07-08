@@ -1,0 +1,8 @@
+<div class="all-users">
+  <h3><%= title %><%= t ".users", count: users.size %></h3>
+  <% if users.any? %>
+    <ul class="show-users">
+      <%= render users %>
+    </ul>
+  <% end %>
+</div>

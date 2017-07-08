@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "/about", to: "statics#about"
   get "/contact", to: "statics#contact"
   get "/create_post", to: "posts#new"
+  get "/following", to: "statics#following"
+  get "/popular", to: "statics#popular"
   post "/create_post", to: "posts#create"
   devise_for :users, controllers: {
     registrations: "users/registrations",

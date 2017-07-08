@@ -13,7 +13,8 @@
   </div>
   <div class="content">
     <h3><%= t ".my_posts" %></h3>
-    <%= link_to t(".view_my_posts"), "#" %>
+    <%= link_to t(".view_my_posts"), controller: :posts, action: :index,
+      user_id: @user.id %>
     <div class="vertical-divider"></div>
     <h3><%= t ".about" %></h3>
     <ul class="user-info-desc">

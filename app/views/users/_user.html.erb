@@ -1,11 +1,16 @@
 <li>
   <%= image_tag user.avatar, alt: user.name, class: "avatar-img-small" %>
   <div class="user-attribute">
-    <%= link_to user.name, controller: :posts, action: :index, user_id: user.id,
-      class: "user-name-info" %>
+    <%= link_to user.name, controller: :posts, action: :index, user_id: user.id %>
+    <%= render "shared/follow_btn", user: user %>
     <div class="user-stats">
       <p><%= t ".join_time" %> <%= l user.created_at, format: :join_time %></p>
       <p><%= t ".number_post" %> <%= user.posts.size %></p>
+      <p><%= t ".following" %> <%= user.following.size %></p>
+      <p>
+        <%= t ".followers" %>
+        <span id="followers-count-<%= user.id %>"><%= user.followers.size %></span>
+      </p>
     </div>
   </div>
 </li>

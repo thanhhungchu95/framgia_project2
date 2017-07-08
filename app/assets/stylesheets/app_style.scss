@@ -938,3 +938,32 @@ label {
 .submit-update {
   margin-right: 5px;
 }
+
+.follow,
+.unfollow {
+  border: 2px solid $sl-blue;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 4px 20px;
+  transition: .5s all;
+}
+
+.follow {
+  background: $sl-blue;
+  color: $white;
+
+  &:hover {
+    background: $white;
+    color: $black;
+  }
+}
+
+.unfollow {
+  background: $white;
+  color: $black;
+
+  &:hover {
+    background: $sl-blue;
+    color: $white;
+  }
+}

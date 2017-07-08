@@ -1,0 +1,11 @@
+<div class="follow-btn">
+  <% if user_signed_in? && current_user != user %>
+    <% if current_user.following? user %>
+      <%= link_to t(".following"), load_relation_with(user), class: "btn follow",
+        method: :delete, id: "follow-btn-#{user.id}" %>
+    <% else %>
+      <%= link_to t(".follow"), build_relation, class: "btn unfollow",
+        method: :post, id: "follow-btn-#{user.id}", data: {id: user.id} %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<div class="post-comments" id="comment">
+  <%= hidden_field_tag "", nil, class: "delete-comment" %>
+  <ul class="comment-list" id="comment-list"><%= render post.comments %></ul>
+  <% if user_signed_in? && current_user == post.user %>
+    <%= form_for [post, post.comments.build] do |f| %>
+      <%= f.text_area :content, placeholder: t(".comment"), class: "form-control",
+        id: "comment-field" %>
+
+      <%= f.submit t(".submit"), class: "btn btn-comment" %>
+    <% end %>
+  <% end %>
+</div>

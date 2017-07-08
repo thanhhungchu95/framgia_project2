@@ -3,13 +3,15 @@ class Ability
 
   def initialize user
     if user
+      user_id = user.id
       can :read, :all
-      can [:edit, :update], User, id: user.id
-      can :create, Post
+      can :update, User, id: user_id
+      can :create, Post, Comment
+      can [:update, :delete], [Post, Comment], user_id: user_id
     else
       cannot :read, User
       can :read, Post
-      cannot [:create, :edit, :update], :all
+      cannot [:create, :update], :all
     end
   end
 end

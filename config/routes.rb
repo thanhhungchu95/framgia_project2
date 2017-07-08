@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     delete "/signout", to: "users/sessions#destroy"
   end
   resources :users, only: [:index, :show]
-  resources :posts, except: [:new, :create]
+  resources :posts, except: :new do
+    resources :comments, except: :new
+  end
   get "*path", to: redirect("404")
   post "*path", to: redirect("404")
 end

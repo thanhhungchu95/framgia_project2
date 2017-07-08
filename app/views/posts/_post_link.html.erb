@@ -8,11 +8,11 @@
 <li>
   <small class="glyphicon glyphicon-user"></small>
   <%= content_tag :span, data: {toggle: "tooltip", placement: "bottom"},
-    title: t(".authors") do %>
+    title: t("authors") do %>
     <%= link_to post.user.name, post.user %>
   <% end %>
 </li>
-<li>
+<li id="comment-toggle">
   <small class="glyphicon glyphicon-comment"></small>
   <%= content_tag :span, data: {toggle: "tooltip", placement: "bottom"},
     title: t(".comments"), class: "badge" do %>

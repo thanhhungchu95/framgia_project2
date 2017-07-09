@@ -26,6 +26,15 @@
 
       <%= f.submit t("signin"), class: "signin-btn" %>
     <% end %>
+    <% if devise_mapping.omniauthable? %>
+      <div class="linked-signin">
+        <% resource_class.omniauth_providers.each do |provider| %>
+          <%= link_to omniauth_authorize_path resource_name, provider do %>
+            <div><%= t ".signin_with", provider: provider.capitalize %></div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <div class="col-md-5 col-md-offset-2 login-right">
     <h3><%= t ".new_regis" %></h3>

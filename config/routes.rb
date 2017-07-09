@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   post "/create_post", to: "posts#create"
   devise_for :users, controllers: {
     registrations: "users/registrations",
-    sessions: "users/sessions"
+    sessions: "users/sessions",
+    omniauth_callbacks: "users/omniauth_callbacks"
   }
   as :user do
     get "/signup", to: "users/registrations#new"

@@ -64,7 +64,7 @@
         <% end %>
         </span>
         <div class="search">
-          <%= form_tag "#", method: :get, class: "navbar-form navbar-right search-form" do %>
+          <%= form_tag posts_path, method: :get, class: "navbar-form navbar-right search-form" do %>
             <%= text_field_tag :q, params[:q], placeholder: t(".search"),
               class: "form-control" %>
             <%= button_tag "search", class: "btn btn-default" do %>

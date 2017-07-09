@@ -90,6 +90,7 @@ en:
     index:
       all_post_by: "All posts by %{user} (%{count})"
       posts: "All posts"
+      search_result: "All post has keyword [%{keyword}]"
     show:
       fb: "Facebook"
       gg: "Google+"

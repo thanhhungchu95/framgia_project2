@@ -602,7 +602,8 @@ label {
 }
 
 
-.new-post-form {
+.new-post-form,
+.edit-post-form {
   padding-top: 30px;
 
   h3 {
@@ -994,5 +995,32 @@ label {
       background: $sl-blue-light;
       font-size: 17px;
     }
+  }
+}
+
+.action-link {
+  float: right;
+  margin-top: -20px;
+
+  a {
+    margin-right: 10px;
+  }
+}
+
+.update-button-group {
+  display: flex;
+  margin: 20px 0 0 30%;
+  width: 40%;
+
+  li {
+    list-style: none;
+    margin-right: 20px;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    font-size: 17px;
+    font-weight: 500;
+    width: 200px;
   }
 }

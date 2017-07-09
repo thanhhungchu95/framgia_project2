@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  load_resource only: :show
+  load_resource except: [:index, :new, :create]
   authorize_resource only: [:new, :show]
   before_action :increase_view_count, only: :show
   before_action :build_post, only: :new
@@ -22,6 +22,28 @@ class PostsController < ApplicationController
       do_after_create_post_done
     else
       do_after_create_post_failed
+    end
+  end
+
+  def update
+    action = params[:commit]
+
+    if action == t(".cancel")
+      do_if_cancel_update_post
+    elsif action == t(".save") && @post.update_attributes(post_params)
+      do_after_update_post_done
+    else
+      do_after_update_post_failed
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      flash[:notice] = t ".deleted"
+      redirect_to root_path
+    else
+      flash.now[:danger] = t ".not_deleted"
+      redirect_back fallback_location: root_path
     end
   end
 
@@ -50,5 +72,24 @@ class PostsController < ApplicationController
     return unless user_signed_in?
     @post = current_user.posts.build
     @post.post_tags.build.build_tag
+  end
+
+  def redirect_to_post
+    redirect_to @post
+  end
+
+  def do_if_cancel_update_post
+    flash[:info] = t ".cancel_update"
+    redirect_to_post
+  end
+
+  def do_after_update_post_done
+    flash[:notice] = t ".update_success"
+    redirect_to_post
+  end
+
+  def do_after_update_post_failed
+    flash[:danger] = t ".update_failed"
+    render :edit
   end
 end

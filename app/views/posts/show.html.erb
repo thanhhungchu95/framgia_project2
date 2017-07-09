@@ -6,6 +6,20 @@
       <ul class="tag-list">
         <%= render @post.tags %>
       </ul>
+      <div class="action-link">
+        <% if can? :edit, @post %>
+          <%= link_to edit_post_path @post do %>
+            <small class="glyphicon glyphicon-edit"></small>
+            <%= t ".edit" %>
+          <% end %>
+        <% end %>
+        <% if can? :delete, @post %>
+          <%= link_to @post, method: :delete, data: {confirm: t(".sure")} do %>
+            <i class="glyphicon glyphicon-remove"></i>
+            <%= t ".delete" %>
+          <% end %>
+        <% end %>
+      </div>
       <%= image_tag @post.picture, class: "single-post-picture" if @post.picture %>
       <p><%= @post.content %></p>
     </div>

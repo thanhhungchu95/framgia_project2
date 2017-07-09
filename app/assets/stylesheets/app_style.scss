@@ -609,6 +609,7 @@ label {
     color: $sl-blue;
     font-size: 20px;
     text-align: center;
+    word-wrap: break-word;
   }
 
   label {
@@ -671,6 +672,7 @@ label {
     font-size: 18px;
     line-height: 1.8em;
     margin: 1em 0;
+    word-wrap: break-word;
   }
 }
 
@@ -863,6 +865,11 @@ label {
       color: $black;
     }
   }
+
+  p,
+  a {
+    word-wrap: break-word;
+  }
 }
 
 .user-attribute {
@@ -871,4 +878,63 @@ label {
   p {
     font-size: 15px;
   }
+}
+
+.avatar-img,
+.avatar-img-small,
+.author-avatar {
+  border-radius: 50%;
+}
+
+.post-comments {
+  h3 {
+    color: $sl-blue;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .comment-attribute {
+    margin: -50px 0 40px 60px;
+  }
+
+  .btn-comment {
+    background: $sl-blue;
+    border-radius: unset;
+    color: $white;
+    float: right;
+    font-size: 16px;
+    padding: 4px 20px;
+
+    &:hover {
+      background: $sl-blue-light;
+      color: $black;
+      transition: .5s all;
+    }
+  }
+
+  textarea {
+    font-size: 20px;
+    height: 120px;
+    margin-bottom: 10px;
+    resize: none;
+    scroll-behavior: auto;
+  }
+}
+
+.comment-list {
+  margin-bottom: 20px;
+  max-height: 300px;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+  word-wrap: break-word;
+}
+
+.edit-comment-input {
+  width: 90%;
+}
+
+.submit-update {
+  margin-right: 5px;
 }

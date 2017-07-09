@@ -1,0 +1,23 @@
+<li id="comment-<%= comment.post.id %>-<%= comment.id %>">
+  <div class="commenter">
+    <%= image_tag comment.user.avatar, class: "avatar-img-small" %>
+  </div>
+  <div class="comment-attribute">
+    <%= t ".by" %>
+    <%= link_to comment.user.name, controller: :posts, action: :index,
+      user_id: comment.user.id, class: "user-name-info" %>
+    <span class="post-time"><%= time_ago_in_words comment.created_at %></span>
+    <%= t ".ago" %>
+    <div id="content-<%= comment.post.id %>-<%= comment.id %>">
+      <p><%= comment.content %></p>
+    </div>
+    <% if user_signed_in? && current_user == comment.user %>
+      <div id="comment-action-<%= comment.post.id %>-<%= comment.id %>">
+        <%= link_to t(".delete"), [comment.post, comment], method: :delete,
+          class: "delete-comment", data: {sure: t(".sure")} %>
+        <%= link_to t(".edit"), [comment.post, comment], class: "edit-comment",
+          data: {update: t(".update"), cancel: t(".cancel")}%>
+      </div>
+    <% end %>
+  </div>
+</li>

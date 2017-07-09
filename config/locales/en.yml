@@ -85,7 +85,8 @@ en:
       post_time: "Post time"
       views: "Views"
     index:
-      all_post_by: "All posts by %{user}"
+      all_post_by: "All posts by %{user} (%{count})"
+      posts: "All posts"
     show:
       fb: "Facebook"
       gg: "Google+"
@@ -118,7 +119,9 @@ en:
       user: "Normal User"
       view_my_posts: "Click here to view my posts"
     user:
-      join_time: "Join at: "
+      following: "Following users: "
+      followers: "Followers: "
+      join_time: "Join from: "
       number_post: "Number of post: "
   statics:
     about:
@@ -161,6 +164,9 @@ en:
       submit: "Submit"
     error_messages:
       error: "error"
+    follow_btn:
+      follow: "Follow"
+      following: "Following"
   comments:
     comment:
       ago: " ago."
@@ -175,3 +181,10 @@ en:
       delete_comment_error: "Delete comment failed!"
       update_comment_error: "Update comment failed!"
   page_not_found: "Page you request not found"
+  relationships:
+    create:
+      following: "Following"
+      follow_error: "Follow failed!"
+    destroy:
+      follow: "Follow"
+      unfollow_error: "Unfollow failed!"

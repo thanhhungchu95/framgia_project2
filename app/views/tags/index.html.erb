@@ -1,0 +1,7 @@
+<% provide :title, t(".tags") %>
+<div class="tags-list">
+  <h3><%= t ".all_tags", count: @tags.size %></h3>
+  <ul>
+    <%= render @tags %>
+  </ul>
+</div>

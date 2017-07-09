@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :comments, except: :new
   end
   resources :relationships, only: [:create, :destroy]
+  resources :tags, only: [:index, :show]
   get "*path", to: redirect("404")
   post "*path", to: redirect("404")
 end

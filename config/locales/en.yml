@@ -198,3 +198,9 @@ en:
     destroy:
       follow: "Follow"
       unfollow_error: "Unfollow failed!"
+  tags:
+    index:
+      all_tags: "All tags (%{count})"
+      tags: "Tags"
+    show:
+      tag: "All posts with tag [%{name}] (%{count})"

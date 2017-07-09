@@ -14,7 +14,6 @@ class TagsController < ApplicationController
   end
 
   def load_post_by_tag
-    posts_filter = @tag.posts.created_time_sort
-    @posts = posts_filter.paginer(params[:page]).per Settings.post_per_page
+    @posts = @tag.posts.created_time_sort.paginer(params[:page]).per Settings.post_per_page
   end
 end

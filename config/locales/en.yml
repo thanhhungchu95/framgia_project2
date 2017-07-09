@@ -95,6 +95,9 @@ en:
       gg: "Google+"
       submit: "Comment"
       tt: "Twitter"
+      edit: "Edit"
+      delete: "Delete"
+      sure: "Are you sure?"
     post:
       read_more: "Read more"
     post_link:
@@ -102,6 +105,28 @@ en:
       comments: "Comments"
       post_time: "Posted at"
       views: "Views"
+    destroy:
+      deleted: "Post deleted"
+      not_deleted: "Post not deleted"
+    edit:
+      choose_picture: "Choose picture"
+      cancel: "Cancel"
+      content: "Content"
+      edit_post: "Edit post"
+      edit_tip: "Change content of your post. Then click [Save] to save change or [Cancel] to go back."
+      not_access: "Please sign-in before create new post."
+      ph_content: "Writting some story ..."
+      ph_tags: "Tags for your post. Enter comma `,` after tag name to add a new tag."
+      ph_title: "About this post ..."
+      save: "Save"
+      tags: "Tags"
+      title: "Title"
+    update:
+      save: "Save"
+      cancel: "Cancel"
+      update_success: "Update post done."
+      update_failed: "Update post failed."
+      cancel_update: "Cancel post update."
   users:
     index:
       all_users: "All Users (%{count})"

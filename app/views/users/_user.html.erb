@@ -1,9 +1,13 @@
 <li>
   <%= image_tag user.avatar, alt: user.name, class: "avatar-img-small" %>
   <div class="user-attribute">
-    <% if (can? :read, user) && current_user.following?(user) %>
-      <div><%= link_to user.name, user %></div>
-    <% end %>
+    <div class="user-name">
+      <% if (can? :read, user) && (current_user == user || current_user.following?(user)) %>
+        <%= link_to user.name, user %>
+      <% else %>
+        <%= user.name %>
+      <% end %>
+    </div>
     <%= link_to t(".view_posts"), controller: :posts, action: :index, user_id: user.id %>
     <%= render "shared/follow_btn", user: user %>
     <div class="user-stats">

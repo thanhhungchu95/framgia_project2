@@ -15,4 +15,5 @@ class Post < ApplicationRecord
   scope :view_count_sort, ->{order view_count: :desc}
   scope :select_field, ->{select :id, :title, :content, :user_id, :view_count, :created_at}
   scope :of, ->(user){where user: user}
+  scope :search, ->(keyword){where "title LIKE ? OR content LIKE ?", "%#{keyword}%", "%#{keyword}%"}
 end

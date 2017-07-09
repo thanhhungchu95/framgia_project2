@@ -5,10 +5,12 @@ class PostsController < ApplicationController
   before_action :build_post, only: :new
 
   def index
-    if user = User.find_by(id: params[:user_id])
-      post_filter = Post.of(user).select_field.created_time_sort
-      @posts = post_filter.paginer(params[:page]).per Settings.post_per_page
-      @user = user
+    keyword = params[:q]
+
+    if keyword && keyword.remove("%").present?
+      load_search_post
+    elsif @user = User.find_by(id: params[:user_id])
+      load_user_post
     else
       flash[:warning] = t "page_not_found"
       redirect_to root_url
@@ -91,5 +93,14 @@ class PostsController < ApplicationController
   def do_after_update_post_failed
     flash[:danger] = t ".update_failed"
     render :edit
+  end
+
+  def load_user_post
+    @posts = Post.of(@user).select_field.created_time_sort.paginer(params[:page])
+             .per Settings.post_per_page
+  end
+
+  def load_search_post
+    @posts = Post.search(params[:q]).paginer(params[:page]).per Settings.post_per_page
   end
 end

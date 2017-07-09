@@ -975,3 +975,24 @@ label {
 .follow-in-profile {
   float: right;
 }
+
+.tags-list {
+  h3 {
+    color: $sl-blue;
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  li {
+    float: left;
+    list-style: none;
+    margin-bottom: 20px;
+    width: 20%;
+
+    .badge {
+      background: $sl-blue-light;
+      font-size: 17px;
+    }
+  }
+}

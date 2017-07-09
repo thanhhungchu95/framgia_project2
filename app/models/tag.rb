@@ -7,6 +7,9 @@ class Tag < ApplicationRecord
   validates :name, presence: true, length: {maximum: Settings.max_tag_length},
     uniqueness: {case_sensitive: false}
 
+  scope :name_sort, ->{order name: :asc}
+  scope :select_field, ->{select :id, :name}
+
   private
 
   def downcase_tag_name

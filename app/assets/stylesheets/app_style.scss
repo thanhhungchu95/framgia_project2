@@ -967,3 +967,11 @@ label {
     color: $white;
   }
 }
+
+.category-active {
+  border-bottom: 3px solid $white;
+}
+
+.follow-in-profile {
+  float: right;
+}

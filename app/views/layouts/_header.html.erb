@@ -8,8 +8,8 @@
       </div>
       <div class="collapse navbar-collapse nav-wil">
         <ul class="nav navbar-nav">
-          <li class="hvr-bounce-to-bottom", id="active-posts">
-            <%= link_to t("posts_title"), "#" %>
+          <li class="hvr-bounce-to-bottom", id="active-home">
+            <%= link_to t("posts_title"), root_path %>
           </li>
           <% if user_signed_in? %>
             <li class="hvr-bounce-to-bottom", id="active-users">

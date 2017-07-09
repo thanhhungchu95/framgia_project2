@@ -12,6 +12,7 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: {maximum: Settings.max_title_length}
 
   scope :created_time_sort, ->{order created_at: :desc}
+  scope :view_count_sort, ->{order view_count: :desc}
   scope :select_field, ->{select :id, :title, :content, :user_id, :view_count, :created_at}
   scope :of, ->(user){where user: user}
 end

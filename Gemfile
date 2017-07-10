@@ -16,6 +16,7 @@ gem "omniauth-facebook"
 gem "omniauth-github"
 gem "rails", "~> 5.0.3"
 gem "sass-rails", "~> 5.0"
+gem "social-share-button"
 gem "turbolinks"
 gem "uglifier"
 

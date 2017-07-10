@@ -29,14 +29,12 @@
     <%= render "shared/comment_list", post: @post %>
   </div>
   <div class="sidebar-post col-md-3">
-    <div class="post-author">
-      <%= image_tag @post.user.avatar, alt: "", class: "author-avatar" %>
-      <%= link_to @post.user.name, @post.user, class: "user-link" %>
+    <div class="user-post">
+      <%= render @post.user %>
     </div>
+    <h4><%= t ".share" %>
     <div class="post-share">
-      <%= image_tag "", alt: t(".fb"), class: "avatar-img-small" %>
-      <%= image_tag "", alt: t(".tt"), class: "avatar-img-small" %>
-      <%= image_tag "", alt: t(".gg"), class: "avatar-img-small" %>
+      <%= social_share_button_tag @post.title, url: request.original_url %>
     </div>
   </div>
 </div>

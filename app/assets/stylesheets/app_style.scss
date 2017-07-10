@@ -3,6 +3,7 @@
 @import 'app_style_variable';
 @import 'app_style_mixin';
 @import 'app_style_placeholder';
+@import 'social-share-button';
 
 // Common
 html,
@@ -1022,5 +1023,20 @@ label {
     font-size: 17px;
     font-weight: 500;
     width: 200px;
+  }
+}
+
+.social-share-button {
+  .ssb-icon {
+    background-size: 40px 40px;
+    height: 40px;
+    margin-right: 30px;
+    width: 40px;
+  }
+}
+
+.user-post {
+  li {
+    list-style: none;
   }
 }

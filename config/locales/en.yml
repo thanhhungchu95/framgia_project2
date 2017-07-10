@@ -92,13 +92,11 @@ en:
       posts: "All posts"
       search_result: "All post has keyword [%{keyword}]"
     show:
-      fb: "Facebook"
-      gg: "Google+"
       submit: "Comment"
-      tt: "Twitter"
       edit: "Edit"
       delete: "Delete"
       sure: "Are you sure?"
+      share: "Share this post"
     post:
       read_more: "Read more"
     post_link:

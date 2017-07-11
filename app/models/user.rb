@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   scope :name_sort, ->{order name: :asc}
   scope :select_field, ->{select :id, :avatar, :name, :created_at}
+  scope :admin_select_field, ->{select :id, :name, :email, :is_admin, :created_at}
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy

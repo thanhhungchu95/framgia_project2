@@ -68,3 +68,10 @@ $(document).on('turbolinks:load', function() {
 
   $(id).addClass('category-active');
 });
+
+$(document).on('turbolinks:load', function() {
+  var title = $(document).attr('title');
+  var id = '#active-admin-' + title.substring(0, title.indexOf('|') - 1).toLowerCase();
+
+  $(id).addClass('admin-active');
+});

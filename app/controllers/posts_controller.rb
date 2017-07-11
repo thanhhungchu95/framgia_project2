@@ -28,24 +28,26 @@ class PostsController < ApplicationController
   end
 
   def update
-    action = params[:commit]
-
-    if action == t(".cancel")
-      do_if_cancel_update_post
-    elsif action == t(".save") && @post.update_attributes(post_params)
-      do_after_update_post_done
+    if @post.update_attributes post_params
+      flash[:notice] = t ".update_success"
+      redirect_to_post
     else
-      do_after_update_post_failed
+      flash[:danger] = t ".update_failed"
+      render :edit
     end
   end
 
   def destroy
     if @post.destroy
       flash[:notice] = t ".deleted"
-      redirect_to root_path
+      if current_user.is_admin?
+        reload_view
+      else
+        redirect_to root_path
+      end
     else
       flash.now[:danger] = t ".not_deleted"
-      redirect_back fallback_location: root_path
+      reload_view
     end
   end
 
@@ -80,21 +82,6 @@ class PostsController < ApplicationController
     redirect_to @post
   end
 
-  def do_if_cancel_update_post
-    flash[:info] = t ".cancel_update"
-    redirect_to_post
-  end
-
-  def do_after_update_post_done
-    flash[:notice] = t ".update_success"
-    redirect_to_post
-  end
-
-  def do_after_update_post_failed
-    flash[:danger] = t ".update_failed"
-    render :edit
-  end
-
   def load_user_post
     @posts = Post.of(@user).select_field.created_time_sort.paginer(params[:page])
              .per Settings.post_per_page
@@ -102,5 +89,9 @@ class PostsController < ApplicationController
 
   def load_search_post
     @posts = Post.search(params[:q]).paginer(params[:page]).per Settings.post_per_page
+  end
+
+  def reload_view
+    redirect_back fallback_location: root_path
   end
 end

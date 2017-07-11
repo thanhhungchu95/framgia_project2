@@ -1028,7 +1028,7 @@ label {
 
 .social-share-button {
   .ssb-icon {
-    background-size: 40px 40px;
+    background-size: 40px;
     height: 40px;
     margin-right: 30px;
     width: 40px;
@@ -1038,5 +1038,63 @@ label {
 .user-post {
   li {
     list-style: none;
+  }
+}
+
+.admin-main-body {
+  background: $white;
+  border: 2px solid $gray-light1;
+  border-radius: 4px;
+  min-height: 600px;
+}
+
+.admin-action-bar {
+  background: $sl-blue;
+  font-size: 20px;
+  font-weight: 500;
+  min-height: 600px;
+  padding: 4px;
+
+  li {
+    list-style: none;
+    margin-bottom: 5px;
+    padding: 8px;
+
+    &:hover {
+      background: $sl-blue-light;
+      border: 1px solid $gray-darker;
+      border-radius: 1px;
+    }
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.admin-active {
+  background: $sl-blue-light;
+  border: 1px solid $gray-darker;
+  border-radius: 1px;
+  list-style: none;
+  padding: 8px;
+}
+
+.user-manager,
+.post-manager,
+.statistic {
+  padding: 10px 30px 0 0;
+}
+
+.table {
+  tr {
+    th,
+    td {
+      text-align: center;
+    }
   }
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield :title %> | <%= t "app_title" %></title>
+    <%= render "layouts/rails_head" %>
+  </head>
+  <body>
+    <div class="banner-body abt">
+      <div class="container">
+        <%= render "layouts/header" %>
+        <div class="admin-main-body">
+          <%= render "shared/flash_messages" %>
+          <div class="row">
+            <div class="col-md-3">
+              <%= render "admins/action_bar" %>
+            </div>
+            <div class="col-md-9">
+              <%= yield %>
+            </div>
+        </div>
+      </div>
+    </div>
+    <%= render "layouts/footer" %>
+  </body>
+</html>

@@ -228,3 +228,44 @@ en:
       tags: "Tags"
     show:
       tag: "All posts with tag [%{name}] (%{count})"
+  admins:
+    index:
+      dashboard: "Dashboard"
+      cannot_access_admin_page: "Only admin user can access admin dashboard"
+    post_manager:
+      action: "Action"
+      author: "Author"
+      delete: "Delete"
+      id: "ID"
+      post: "Post"
+      post_time: "Post time"
+      sure: "Are you sure?"
+      title: "Title"
+      view_count: "View count"
+      view_post: "View post"
+    user_manager:
+      action: "Action"
+      aministrator: "Administrator"
+      delete: "Delete"
+      email: "Email"
+      id: "ID"
+      join_time: "Join date"
+      level: "Level"
+      name: "Name"
+      posts: "Posts"
+      sure: "Are you sure?"
+      user: "User"
+      view_profile: "View profile"
+    statistic:
+      statistic: "Statistic"
+    action_bar:
+      post_manager: "Post management"
+      statistic: "Statistic"
+      user_manager: "User management"
+  users:
+    show:
+      not_access_user_profile: "You must follow this user to view his/her profile"
+    destroy:
+      deleted: "User deleted"
+      not_deleted: "User not deleted"
+  dashboard: "Dashboard"

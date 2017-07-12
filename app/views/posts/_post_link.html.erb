@@ -9,7 +9,11 @@
   <small class="glyphicon glyphicon-user"></small>
   <%= content_tag :span, data: {toggle: "tooltip", placement: "bottom"},
     title: t("authors") do %>
-    <%= link_to post.user.name, post.user %>
+    <% if user_signed_in? && current_user.following?(post.user) %>
+      <%= link_to post.user.name, post.user %>
+    <% else %>
+      <%= link_to post.user.name, controller: :posts, action: :index, user_id: post.user_id %>
+    <% end %>
   <% end %>
 </li>
 <li id="comment-toggle">

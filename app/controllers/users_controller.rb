@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def verify_follow
-    return if current_user.is_admin? || current_user.following?(@user)
+    return if current_user.is_admin? || current_user.following?(@user) || current_user == @user
     flash[:warning] = t ".not_access_user_profile"
     redirect_to root_path
   end

@@ -147,12 +147,16 @@ en:
       phone: "Phone number"
       user: "Normal User"
       view_my_posts: "Click here to view my posts"
+      not_access_user_profile: "You must follow this user to view his/her profile"
     user:
       following: "Following users: "
       followers: "Followers: "
       join_time: "Join from: "
       number_post: "Number of post: "
       view_posts: "View my posts"
+    destroy:
+      deleted: "User deleted"
+      not_deleted: "User not deleted"
   statics:
     about:
       about_desc: "This is about page for Social Life."
@@ -262,10 +266,4 @@ en:
       post_manager: "Post management"
       statistic: "Statistic"
       user_manager: "User management"
-  users:
-    show:
-      not_access_user_profile: "You must follow this user to view his/her profile"
-    destroy:
-      deleted: "User deleted"
-      not_deleted: "User not deleted"
   dashboard: "Dashboard"

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   load_resource except: [:index, :new, :create]
-  authorize_resource only: [:new, :show]
+  authorize_resource only: [:new, :show, :edit]
   before_action :increase_view_count, only: :show
   before_action :build_post, only: :new
 
@@ -19,6 +19,9 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build post_params
+    @post.post_tags.each do |pt|
+      pt.tag = Tag.find_or_initialize_by name: pt.tag.name
+    end
 
     if @post.save
       do_after_create_post_done
